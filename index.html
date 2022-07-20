@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="asset/ccs/style.css">
+</head>
+<body>
+
+    <!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Générateur de mot de passe</title>
+</head>
+
+<body>
+    <html>
+        <head>
+        <script language="javascript">
+        function affiche(){
+        let chaine=""; 
+        if(document.formu.nombre.checked==true)//si l'utilisateur veut des nombres
+        {
+        chaine+="0123456789"
+        }
+
+        if(document.formu.lettreMin.checked==true)//si l'utilisateur veut des lettres minuscule
+        {
+        chaine+="azertyuiopqsdfghjklmwxcvbn"
+        }
+
+        if(document.formu.lettreMaj.checked==true)//si l'utilisateur veut des lettres majuscules
+        {
+        chaine+="AZERTYUIOPQSDFGHJKLMWXCVBN"
+        }
+
+        if(document.formu.caractereSpe.checked==true)//si l'utilisateur veut des caractères spé
+        {
+        chaine+="(/[~`!#$%^&*+=-[]';,/{}|\":<>?]/)"
+        }
+
+        document.formu.result.value=""; //réinitialisation du champ de résultat
+        for(i=1;i<=parseInt(document.formu.nbchar.value);i++)
+        
+        {
+        let nbalea=Math.floor(Math.random()*chaine.length);//génération d'un nombre aléatoire entre 0 et la longueur de la chaine
+        document.formu.result.value+=chaine.charAt(nbalea);//sélection du caractère correspondant
+        }
+        }
+        </script>
+        </head>
+        <body>
+        <form name="formu">
+        Nombre de caractères: <input type="text" name="nbchar"><br>
+        <input type="checkbox" name="nombre">Nombres<br>
+        <input type="checkbox" name="lettreMin">Lettres minuscules<br>
+        <input type="checkbox" name="lettreMaj">Lettres majuscules<br>
+        <input type="checkbox" name="caractereSpe">Caractères spéciaux <br>
+        <input type="button" value="générer" onClick="affiche()"><br>
+        <input type="text" name="result">
+        </body></html>
+</body>
+</form>
+</html>
+     
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="asset/js/main.js"></script>
+
+     
+                
+</body>
+</html>
